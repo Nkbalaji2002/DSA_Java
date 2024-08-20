@@ -86,6 +86,17 @@ public class BinaryTree {
         }
     }
 
+    // Recursive PostOrder Traversal
+    public void postOrder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        postOrder(root.left);
+        postOrder(root.right);
+        System.out.print(root.data + " ");
+    }
+
     public void createBinaryTree() {
         TreeNode first = new TreeNode(1);
         TreeNode second = new TreeNode(2);
@@ -101,20 +112,27 @@ public class BinaryTree {
         first.right = third;
 
         second.left = fourth;
-        second.right = fifth;
 
-        third.left = sixth;
-        third.right = seventh;
+        // first.left = second;
+        // first.right = third;
+
+        // second.left = fourth;
+        // second.right = fifth;
+
+        // third.left = sixth;
+        // third.right = seventh;
     }
 
     public static void main(String[] args) {
         BinaryTree bt = new BinaryTree();
         bt.createBinaryTree();
+
+        bt.postOrder(root);
         // bt.preOrder(root);
         // bt.preOrder();
 
         // bt.inOrder(root);
-        bt.inOrder();
+        // bt.inOrder();
 
         System.out.println();
     }

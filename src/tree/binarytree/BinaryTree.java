@@ -1,5 +1,5 @@
 /* 
- * Binary Tree for Data Structure and Algorithmes
+ * Binary Tree for Data Structure and Algorithms
  */
 
 package tree.binarytree;
@@ -55,15 +55,35 @@ public class BinaryTree {
 
     }
 
-    public void postOrder(TreeNode root) {
+    public void inOrder(TreeNode root) {
         // Base Case
         if (root == null) {
             return;
         }
 
-        postOrder(root.left);
+        inOrder(root.left);
         System.out.print(root.data + " ");
-        postOrder(root.right);
+        inOrder(root.right);
+    }
+
+    public void inOrder() {
+        if (root == null) {
+            return;
+        }
+
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode temp = root;
+
+        while (!stack.isEmpty() || temp != null) {
+            if (temp != null) {
+                stack.push(temp);
+                temp = temp.left;
+            } else {
+                temp = stack.pop();
+                System.out.print(temp.data + " ");
+                temp = temp.right;
+            }
+        }
     }
 
     public void createBinaryTree() {
@@ -93,7 +113,8 @@ public class BinaryTree {
         // bt.preOrder(root);
         // bt.preOrder();
 
-        bt.postOrder(root);
+        // bt.inOrder(root);
+        bt.inOrder();
 
         System.out.println();
     }

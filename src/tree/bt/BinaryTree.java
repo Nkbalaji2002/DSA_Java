@@ -2,7 +2,7 @@
  * Binary Tree for Data Structure and Algorithms
  */
 
-package tree.binarytree;
+package tree.bt;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -72,23 +72,53 @@ public class BinarySearchTree {
         }
     }
 
-    public static void main(String[] args) {
-        BinarySearchTree bst = new BinarySearchTree();
-        bst.insert(6);
-        bst.insert(4);
-        bst.insert(8);
-        bst.insert(2);
-        bst.insert(5);
-        bst.insert(7);
-        bst.insert(9);
+    public boolean isValid(int min, int max) {
+        return isValid(root, min, max);
+    }
 
-        // bst.inorder();
-        if (null != bst.search(5)) {
-            System.out.println("Key Found!!");
-        } else {
-            System.out.println("Key not Found!");
+    // validate the bst
+    public boolean isValid(TreeNode root, int min, int max) {
+        if (root == null) {
+            return true;
         }
 
+        if (root.data <= min || root.data >= max) {
+            return false;
+        }
+
+        boolean left = isValid(root.left, min, root.data);
+
+        if (left) {
+            boolean right = isValid(root.right, root.data, max);
+            return right;
+        }
+
+        return false;
+    }
+
+    public static void main(String[] args) {
+        BinarySearchTree bst = new BinarySearchTree();
+        bst.insert(5);
+        bst.insert(2);
+        bst.insert(6);
+        bst.insert(1);
+        bst.insert(3);
+
+        // bst.inorder();
+        // if (null != bst.search(5)) {
+        // System.out.println("Key Found!!");
+        // } else {
+        // System.out.println("Key not Found!");
+        // }
+
+        int min = Integer.MIN_VALUE;
+        int max = Integer.MAX_VALUE;
+
+        if (bst.isValid(min, max)) {
+            System.out.println(true);
+        } else {
+            System.out.println(false);
+        }
     }
 
 }

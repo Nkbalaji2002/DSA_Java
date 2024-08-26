@@ -17,14 +17,14 @@ public class SpiralMatrix {
             c--;
 
             if (k < r) {
-                for (int i = c - 1; i >= l; i++) {
+                for (int i = c - 1; i >= l; i--) {
                     System.out.print(matrix[r - 1][i] + " ");
                 }
                 r--;
             }
 
             if (l < c) {
-                for (int i = r - 1; i >= k; i++) {
+                for (int i = r - 1; i >= k; i--) {
                     System.out.print(matrix[i][l] + " ");
                 }
                 l++;

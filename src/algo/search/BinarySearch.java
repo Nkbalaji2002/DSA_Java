@@ -28,7 +28,9 @@ public class BinarySearch {
         BinarySearch obj = new BinarySearch();
 
         int[] arr = { 5, 1, 9, 2, 10, 15, 20 };
-        int result = obj.search(arr, 10);
+        int[] arr2 = { 1, 10, 20, 47, 59, 65, 75, 88, 99 };
+
+        int result = obj.search(arr2, 65);
         System.out.println("result : " + result);
 
     }

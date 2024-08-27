@@ -21,16 +21,17 @@ public class BinarySearch {
             }
         }
 
-        return -1;
+        // return -1;
+        return low;
     }
 
     public static void main(String[] args) {
         BinarySearch obj = new BinarySearch();
 
         int[] arr = { 5, 1, 9, 2, 10, 15, 20 };
-        int[] arr2 = { 1, 10, 20, 47, 59, 65, 75, 88, 99 };
+        // int[] arr2 = { 1, 10, 20, 47, 59, 65, 75, 88, 99 };
 
-        int result = obj.search(arr2, 65);
+        int result = obj.search(arr, 65);
         System.out.println("result : " + result);
 
     }

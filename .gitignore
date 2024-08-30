@@ -1,2 +1,5 @@
 .vscode
 bin
+.classpath
+.project
+/src/module-info.java
